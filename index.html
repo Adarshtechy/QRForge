@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QRForge | Professional QR Code Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-papNM2zFZr1L8t8J+6H4jvX2S3kQqE9ZC6FZ9l6bM+eYz5L+q6Z+gXKX0X5HnX9Y7J+XQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1>
+                    <i class="fas fa-qrcode"></i> QRForge
+                </h1>
+                <p>Generate professional QR codes instantly</p>
+            </div>
+        </header>
+
+        <main class="main-content">
+
+            <!-- Input Section -->
+            <section class="input-card">
+                <div class="input-group">
+                    <textarea id="qr-input" rows="3"
+                        placeholder="Enter URL, text, or any data to encode...">https://example.com</textarea>
+
+                    <button id="generate-btn" class="btn-primary" type="button">
+                        <i class="fas fa-bolt"></i> Generate QR Code
+                    </button>
+                </div>
+            </section>
+
+            <!-- Content Grid -->
+            <div class="content-grid">
+
+                <!-- QR Display -->
+                <section class="qr-display-card">
+                    <div class="qr-container">
+                        <div id="qrcode" class="qrcode-wrapper"></div>
+
+                        <div class="qr-placeholder" id="qr-placeholder">
+                            <i class="fas fa-qrcode"></i>
+                            <p>QR code will appear here</p>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="action-buttons">
+                        <button id="download-png" class="btn-download" type="button">
+                            <i class="fas fa-download"></i> Download PNG
+                        </button>
+
+                        <button id="share-btn" class="btn-share" type="button">
+                            <i class="fas fa-share-alt"></i> Share
+                        </button>
+                    </div>
+                </section>
+
+                <!-- Customization Panel -->
+                <section class="customization-card">
+                    <h3>
+                        <i class="fas fa-sliders-h"></i> Customize
+                    </h3>
+
+                    <!-- Colors -->
+                    <div class="color-controls">
+                        <div class="color-picker">
+                            <label for="qr-color">QR Color</label>
+                            <input type="color" id="qr-color" value="#2563eb">
+                        </div>
+
+                        <div class="color-picker">
+                            <label for="bg-color">Background</label>
+                            <input type="color" id="bg-color" value="#ffffff">
+                        </div>
+                    </div>
+
+                    <!-- Size -->
+                    <div class="size-control">
+                        <label for="qr-size">
+                            Size: <span id="size-value">300</span>px
+                        </label>
+                        <input type="range" id="qr-size" min="150" max="500" value="300">
+                    </div>
+
+                    <!-- Error Level -->
+                    <div class="error-control">
+                        <label for="error-level">Error Correction Level</label>
+                        <select id="error-level">
+                            <option value="L">Low (7%)</option>
+                            <option value="M" selected>Medium (15%)</option>
+                            <option value="Q">High (25%)</option>
+                            <option value="H">Maximum (30%)</option>
+                        </select>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="quick-actions">
+                        <h4>
+                            <i class="fas fa-bolt"></i> Quick Examples
+                        </h4>
+
+                        <div class="quick-buttons">
+                            <button class="quick-btn" data-type="url" type="button">
+                                <i class="fas fa-link"></i> URL
+                            </button>
+
+                            <button class="quick-btn" data-type="text" type="button">
+                                <i class="fas fa-font"></i> Text
+                            </button>
+
+                            <button class="quick-btn" data-type="email" type="button">
+                                <i class="fas fa-envelope"></i> Email
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Theme Toggle -->
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <i class="fas fa-moon" aria-hidden="true"></i>
+    </button>
+
+
+    <!-- Toast -->
+    <div id="toast" class="toast" role="alert" aria-live="polite">
+        <i class="fas fa-check-circle"></i>
+        <span id="toast-message"></span>
+    </div>
+
+    <!-- Script -->
+    <script src="script.js" defer></script>
+</body>
+
+</html>
