@@ -5,13 +5,9 @@
 ## 🚀 Features
 
 - 🔤 **Text & URL Input** – Enter any text or URL and generate a QR code instantly.
-  
 - 📏 **Size Options** – Choose from multiple sizes (e.g., 100x100 up to 1000x1000 pixels).
-  
 - 📱 **Responsive Design** – Works smoothly on mobile and desktop devices.
- 
 - 💾 **Download as PNG** – Easily save generated QR codes as PNG images.
-  
 - 🎨 **Clean UI** – Modern and user-friendly interface.
 
 ## 🧠 Usage
@@ -38,11 +34,11 @@ To run QRForge locally:
 
 1. Clone the repository:  
    ```bash
-   git clone https://github.com/Adarshtechy/QRForge.git
+   git clone https://github.com/Adarshtechy/qrforge.git
    ```
 2. Navigate to the project directory:
    ```bash
-   cd QRForge
+   cd qrforge
    ```
 3. Open the app in your browser:
    - Double-click index.html,
